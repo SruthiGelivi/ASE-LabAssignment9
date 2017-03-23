@@ -1,0 +1,28 @@
+.cla{
+    background-image: url(Register.jpg);
+    background-size: 100% 100%;
+    font-family: sans-serif;  
+    
+}
+.xyz{
+    align-items: center;
+    text-align: center;
+align-content: flex-end;
+    width: auto;
+    height: auto;
+}
+
+#search {
+    width: 20em;  height: 29em;
+}
+
+h1.h11{
+    color: greenyellow;
+    margin-right: 370px;
+    margin-left: 650px;
+    margin-top: 100;
+}
+#search{
+    width: auto;
+    height: auto;
+}

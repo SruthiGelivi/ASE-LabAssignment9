@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.log('Error', err));
+    }
+  </script>-->
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+  -->
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+
+
+  <script src="app.js"></script>
+</head>
+<body ng-app="Application" ng-controller="TodoCtrl">
+<div class="list">
+
+
+
+</div>
+<ion-pane>
+  <ion-header-bar class="bar-stable">
+    <h1 class="title">Application</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input id="text_input" type="text" placeholder="Enter your text here">
+      </label>
+      <button class="button button-small" ng-click="getAnalysis()">
+        Classify
+      </button>
+
+      <button class="button button-small" ng-click="getData()">
+        Get Info
+      </button>
+
+    </div>
+
+    <p ng-model="ReviewWithSentiment">
+
+    <TABLE BORDER=2 CELLPADDING=4> <TR> <TH style="color: #f4d0fc" COLSPAN=2 BGCOLOR="#445533">Mood Analysis Using Uclassify API </TH> </TR>
+
+      <TR> <TD>Happy</TD> <TD>{{ReviewWithSentiment.happy}}</TD> </TR>
+      <TR> <TD>Upset</TD> <TD>{{ReviewWithSentiment.upset}}</TD> </TR>
+      <TR> <TH style="color: rgba(83, 229, 176, 0.24)" COLSPAN=2 BGCOLOR="#445553">
+      </TH>
+      </TR></TABLE>
+    </p>
+
+    <p ng-model="ReviewWithData">
+
+    <TABLE BORDER=2 CELLPADDING=4> <TR> <TH style="color: #f4d0fc" COLSPAN=2 BGCOLOR="#445533">Text usage and definition </TH> </TR>
+
+      <TR> <TD>Text: </TD> <TD>{{ReviewWithData.text}}</TD> </TR>
+      <TR> <TD>Definition:&nbsp</TD> <TD>{{ReviewWithData.definition}}</TD> </TR>
+      <TR> <TH style="color: rgba(83, 229, 176, 0.24)" COLSPAN=2 BGCOLOR="#445553">
+      </TH>
+      </TR></TABLE>
+    </p>
+  </ion-content>
+</ion-pane>
+</body>
+</html>
